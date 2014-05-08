@@ -1,0 +1,117 @@
+{
+  "type": "script",
+  "seleniumVersion": "2",
+  "formatVersion": 2,
+  "steps": [
+    {
+      "type": "get",
+      "url": "https://dev.5thkind.prv/release/login.php"
+    },
+    {
+      "type": "assertElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "div.login-background"
+      }
+    },
+    {
+      "type": "assertElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "div.login_container"
+      }
+    },
+    {
+      "type": "assertElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "img"
+      }
+    },
+    {
+      "type": "assertElementPresent",
+      "locator": {
+        "type": "css selector",
+        "value": "legend"
+      }
+    },
+    {
+      "type": "assertElementPresent",
+      "locator": {
+        "type": "xpath",
+        "value": "//table[@id='login-table']//td[.='Username']"
+      }
+    },
+    {
+      "type": "assertElementPresent",
+      "locator": {
+        "type": "xpath",
+        "value": "//table[@id='login-table']//td[.='Password']"
+      }
+    },
+    {
+      "type": "assertElementPresent",
+      "locator": {
+        "type": "id",
+        "value": "username"
+      }
+    },
+    {
+      "type": "assertElementPresent",
+      "locator": {
+        "type": "id",
+        "value": "password"
+      }
+    },
+    {
+      "type": "assertElementPresent",
+      "locator": {
+        "type": "xpath",
+        "value": "//table[@id='login-table']/tbody/tr[3]/td[3]"
+      }
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "name",
+        "value": "Submit"
+      }
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "username"
+      },
+      "text": "testuser"
+    },
+    {
+      "type": "setElementText",
+      "locator": {
+        "type": "id",
+        "value": "password"
+      },
+      "text": "5ktest"
+    },
+    {
+      "type": "clickElement",
+      "locator": {
+        "type": "name",
+        "value": "Submit"
+      }
+    },
+    {
+      "type": "waitForCurrentUrl",
+      "url": "https://dev.5thkind.prv/release/index.php"
+    },
+    {
+      "type": "assertCurrentUrl",
+      "url": "https://dev.5thkind.prv/release/index.php"
+    }
+  ],
+  "data": {
+    "configs": {},
+    "source": "none"
+  },
+  "inputs": []
+}
